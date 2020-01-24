@@ -13,7 +13,7 @@ while True:
             hesabfuel.configure(text="Please enter valid nummber")
         else:
             hesabfuel.configure(text=str(round(int(aznbox.get()) / litrfuel,2))+ " Liter")
-    litr = Label(text="usd:", font=("Arial", 17), bg="light blue")
+    litr = Label(text="USD", font=("Arial", 17), bg="light blue")
     aznbox = Entry()
     button = Button(text="Calculate", command=cal,bg="grey")
     title2 = Label(text="Minicafe",bg="light blue",font = ("Courier",40))
@@ -30,7 +30,7 @@ while True:
     title.place(x=100, y=10)
     title2.place(x=450, y=10)
     litr.place(x = 100,y = 90)
-    aznbox.place(x = 155,y = 98)
+    aznbox.place(x = 166,y = 98)
     button.place(x = 100,y = 160)
     burgtxt.place(x = 450,y = 100)
     fritxt.place(x = 450,y = 150)
