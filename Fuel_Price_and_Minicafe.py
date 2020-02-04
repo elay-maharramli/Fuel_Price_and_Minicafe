@@ -1,4 +1,5 @@
 from tkinter import *
+import time
 
 tk = Tk()
 coke = 2
@@ -29,22 +30,34 @@ while True:
         else:
             
             hesabfuel.configure(text=str(round(int(aznbox.get()) / litrfuel,2))+ " Litr")
-            
+            road2 = Label(text="Yaxşı yol!",bg="light blue",fg="red",font=("Arial",17))
+            road2.place(x = 100,y = 430)
     def caltwo():
         
-        if burgent.get() or cizburgent.get() or frient.get() or cokent.get() or colaent.get() == "":
+        if str(burgent.get()) or str(cizburgent.get()) or str(frient.get()) or str(cokent.get()) or str(colaent.get()) == "":
             
             hesabkafe.configure(text="Etibarlı bir dəyər daxil edin")
-            
-        total = (int(burgent.get()) * burg) + (int(cizburgent.get()) * cizburg) + (int(frient.get()) * fri) + (int(cokent.get()) * coke) + (int(colaent.get()) * cola)
         
+        total = (int(burgent.get()) * burg) + (int(cizburgent.get()) * cizburg) + (int(frient.get()) * fri) + (int(cokent.get()) * coke) + (int(colaent.get()) * cola)
+            
         hesabkafe.configure(text=str(total) + str(" AZN"))
 
     def calthree():
+        if str(burgent.get()) or str(cizburgent.get()) or str(frient.get()) or str(cokent.get()) or str(colaent.get()) or str(aznbox.get()) == "":
+            
+            hesaball.configure(text="Etibarlı bir dəyər daxil edin")
+            
         total2 = int(aznbox.get()) + (int(burgent.get()) * burg) + (int(cizburgent.get()) * cizburg) + (int(frient.get()) * fri) + (int(cokent.get()) * coke) + (int(colaent.get()) * cola)
 
         hesaball.configure(text=str(total2) + " AZN")
-    
+        road = Label(text="Yaxşı yol!",bg="light blue",fg="red",font=("Arial",17))
+        road.place(x = 370,y = 580)
+    def exitcmnd():
+        bye = Label(text="Sağolun!")
+        bye.place(x = 120,y = 550)
+        time.sleep(0.1)
+        tk.destroy()
+        
     azn = Label(text="AZN:", font=("Arial", 17), bg="light blue")
     
     aznbox = Entry()
@@ -55,8 +68,8 @@ while True:
 
     allbtn = Button(text="Ümumi hesabla",command=calthree)
 
-    a92 = Checkbutton(text="A-92",bg="light blue")
-    
+    exit = Button(text="Çıxış",command=exitcmnd)
+
     title2 = Label(text="Minikafe",bg="light blue",font = ("Courier",40))
     
     hesabfuel = Label(text="",bg="light blue",font=("Arial", 17))
@@ -103,8 +116,8 @@ while True:
 
     allbtn.place(x = 370,y = 500)
 
-    a92.place(x = 168,y = 148)
-    
+    exit.place(x = 120,y = 550)
+
     burgtxt.place(x = 450,y = 100)
     
     fritxt.place(x = 450,y = 150)
